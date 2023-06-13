@@ -1,0 +1,18 @@
+sourceCompatibility = 1.8
+sourceSets.main.java.srcDirs = [ "src/" ]
+apply plugin: 'application'
+
+mainClassName = 'com.websocketdemo.game.server.ServerLauncher'
+
+jar {
+  manifest {
+    attributes "Main-Class": "$mainClassName"
+  }
+
+  from {
+    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+  }
+}
+eclipse.project {
+  name = appName + "-server"
+}

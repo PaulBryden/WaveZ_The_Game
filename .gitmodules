@@ -1,0 +1,3 @@
+[submodule "gdx-lml"]
+	path = gdx-lml
+	url = https://github.com/czyzby/gdx-lml
